@@ -167,7 +167,7 @@ for ii = 1:Sizeloc
                 [~,labelj] = func_getUnitlabel(ChoseUnitsAL,ChoseTrialsAL, CLeftTrialsL,CRightTrialsL,UnitobjL,Neuronx,Neuronj,Phase)
                 [labeli,~] = func_getUnitlabel(ChoseUnitsAR,ChoseTrialsAR,CLeftTrialsR,CRightTrialsR,UnitobjR,Neuroni1,Neuronx,Phase)
                 NeuPairLabel{end+1,1} = [ana.Animals{Ani},'Sess',num2str(Sess),'Probe1_',num2str(Neuroni1),labeli,'-',num2str(Neuronj),labelj];%LinkedNeurons respect to identity/transEffi
-            else
+            elseif Neuroni > UnitLenL && Neuronj > UnitLenL
                 Neuroni1 = Neuroni - UnitLenL; Neuronj1 = Neuronj - UnitLenL;
                 [labeli,labelj] = func_getUnitlabel(ChoseUnitsAR,ChoseTrialsAR,CLeftTrialsR,CRightTrialsR,UnitobjR,Neuroni1,Neuronj1,Phase)
                 NeuPairLabel{end+1,1} = [ana.Animals{Ani},'Probe1_','Sess',num2str(Sess),num2str(Neuroni1),labeli,'-',num2str(Neuronj1),labelj];%LinkedNeurons respect to identity/transEffi
